@@ -1,7 +1,8 @@
 #!/usr/bin/perl
 use strict;
+# ABSTRACT = 'yaml toolkit merges yaml and transforms bash variables to yaml.'
 use Getopt::Std::Strict 'chvxm';
-our $VERSION = sprintf "%d.%02d", q$Revision: 1.7 $ =~ /(\d+)/g; 
+our $VERSION = sprintf "%d.%02d", q$Revision: 1.8 $ =~ /(\d+)/g; 
 use YAML;
 use XML::Dumper;
 
@@ -143,13 +144,35 @@ yamltk [OPTION].. PATH..
 
 =head2 USAGE EXAMPLES
 
-Merge ..
+=over 4
+
+=item Merge ..
 
    yamltk ./*yml > merged.yml
 
-Check that these files have proper syntax
+=item Check that these files have proper syntax
 
    yamltk -c ./*yml
+
+=item Merge in a special kind of way:
+
+   # cat houses.var
+   These are all houses.
+   They are really cool houses.
+   # cat notes.yml
+   ---
+   NAME: A great place to start
+   DESCRIPTION: I am without a doubt, descriptive.
+
+   # yamltk -x houses.var notes.yml
+   ---
+   DESCRIPTION: 'I am without a doubt, descriptive.'
+   NAME: A great place to start
+   houses: |-
+     These are all houses.
+     They are really cool houses.
+
+=back
 
 =head3 SPECIAL EXTENSIONS
 
@@ -169,16 +192,19 @@ as scalar.
 
 This is primarily being used to create data for use with tmpltk
 
-
-
 =head1 SEE ALSO
 
 Also in this distribution:
 
    csv2yaml - filter csv to yaml 
-   yaml2cvs - filter yaml to csv
+   yaml2cvs - filter yaml to csv   
+   yamltk - parent package
+   yamltk-tools - lists info
 
-yamltk - parent package
+=head1 CAVEATS
+
+Being used in production- but still in alpha.
+Please contact the AUTHOR for any suggestions, etc.
 
 =head1 TODO
 

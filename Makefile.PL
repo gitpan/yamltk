@@ -12,7 +12,7 @@ WriteMakefile(
    
    AUTHOR         => 'Leo Charre leocharre at cpan dot org',   
    
-   EXE_FILES => [qw(bin/csv2yaml bin/yaml2csv bin/yamltk)],
+   EXE_FILES => [qw(bin/csv2yaml bin/yaml2csv bin/yamltk bin/yamltk-tools)],
 
    
    # gen /usr/bin/pmused by Thu Mar 25 11:17:09 EDT 2010 

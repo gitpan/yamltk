@@ -1,8 +1,10 @@
 MANIFEST
 Makefile.PL
+README
 bin/csv2yaml
 bin/yaml2csv
 bin/yamltk
+bin/yamltk-tools
 lib/LEOCHARRE/DataConverter.pm
 t/30-dataconverter.t
 t/32-dataconverter-to.t
@@ -27,5 +29,6 @@ t/people/body.tmpl
 t/people/body_description.var
 t/people/page.meta
 t/people/people_list.var
+t/playmates.yml
 t/var.weight
 META.yml                                 Module meta-data (added by MakeMaker)

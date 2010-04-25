@@ -1,8 +1,9 @@
 #!/usr/bin/perl
 use strict;
+# ABSTRACT = 'Filter csv to yaml.'
 use Carp;
-our $VERSION = sprintf "%d.%02d", q$Revision: 1.3 $ =~ /(\d+)/g;
-use Smart::Comments '###';
+our $VERSION = sprintf "%d.%02d", q$Revision: 1.4 $ =~ /(\d+)/g;
+#use Smart::Comments '###';
 use Getopt::Std::Strict 'hvd:e:f:';
 use YAML;
 
